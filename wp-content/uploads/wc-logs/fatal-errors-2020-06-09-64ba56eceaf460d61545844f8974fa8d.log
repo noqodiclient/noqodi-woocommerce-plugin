@@ -1,0 +1,142 @@
+2020-06-09T09:44:15+00:00 CRITICAL Uncaught Error: Object of class WP could not be converted to string in C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\shortcodes\class-wc-shortcode-checkout.php:62
+Stack trace:
+#0 C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\class-wc-shortcodes.php(72): WC_Shortcode_Checkout::output('')
+#1 C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\class-wc-shortcodes.php(95): WC_Shortcodes::shortcode_wrapper(Array, '')
+#2 C:\xampp\htdocs\wpfive\wp-includes\shortcodes.php(343): WC_Shortcodes::checkout('', '', 'woocommerce_che...')
+#3 [internal function]: do_shortcode_tag(Array)
+#4 C:\xampp\htdocs\wpfive\wp-includes\shortcodes.php(218): preg_replace_callback('/\\[(\\[?)(woocom...', 'do_shortcode_ta...', '[woocommerce_ch...')
+#5 C:\xampp\htdocs\wpfive\wp-includes\class-wp-hook.php(287): do_shortcode('[woocommerce_ch...')
+#6 C:\xampp\htdocs\wpfive\wp-includes\plugin.php(206): WP_Hook->apply_filters('[woocommerce_ch...', Array)
+#7 C:\xampp\htdocs\wpfive\wp-includes\post-templa in C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\shortcodes\class-wc-shortcode-checkout.php on line 62
+
+2020-06-09T09:49:51+00:00 CRITICAL Uncaught Error: Object of class WP could not be converted to string in C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\shortcodes\class-wc-shortcode-checkout.php:63
+Stack trace:
+#0 C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\class-wc-shortcodes.php(72): WC_Shortcode_Checkout::output('')
+#1 C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\class-wc-shortcodes.php(95): WC_Shortcodes::shortcode_wrapper(Array, '')
+#2 C:\xampp\htdocs\wpfive\wp-includes\shortcodes.php(343): WC_Shortcodes::checkout('', '', 'woocommerce_che...')
+#3 [internal function]: do_shortcode_tag(Array)
+#4 C:\xampp\htdocs\wpfive\wp-includes\shortcodes.php(218): preg_replace_callback('/\\[(\\[?)(woocom...', 'do_shortcode_ta...', '[woocommerce_ch...')
+#5 C:\xampp\htdocs\wpfive\wp-includes\class-wp-hook.php(287): do_shortcode('[woocommerce_ch...')
+#6 C:\xampp\htdocs\wpfive\wp-includes\plugin.php(206): WP_Hook->apply_filters('[woocommerce_ch...', Array)
+#7 C:\xampp\htdocs\wpfive\wp-includes\post-templa in C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\shortcodes\class-wc-shortcode-checkout.php on line 63
+
+2020-06-09T10:13:47+00:00 CRITICAL syntax error, unexpected 'if' (T_IF), expecting ';' or ',' in C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\shortcodes\class-wc-shortcode-checkout.php on line 38
+
+2020-06-09T11:45:29+00:00 CRITICAL syntax error, unexpected 'echo' (T_ECHO), expecting ';' or ',' in C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\shortcodes\class-wc-shortcode-checkout.php on line 252
+
+2020-06-09T11:45:45+00:00 CRITICAL syntax error, unexpected 'if' (T_IF), expecting ';' or ',' in C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\shortcodes\class-wc-shortcode-checkout.php on line 257
+
+2020-06-09T13:19:01+00:00 CRITICAL syntax error, unexpected '}', expecting ';' or ',' in C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\shortcodes\class-wc-shortcode-checkout.php on line 254
+
+2020-06-09T13:27:16+00:00 CRITICAL syntax error, unexpected '{', expecting ')' in C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\shortcodes\class-wc-shortcode-checkout.php on line 242
+
+2020-06-09T14:34:09+00:00 CRITICAL Uncaught Error: Call to a member function changeset_uuid() on null in C:\xampp\htdocs\wpfive\wp-content\plugins\noqodi\noqodi-gateway.php:134
+Stack trace:
+#0 C:\xampp\htdocs\wpfive\wp-content\plugins\noqodi\noqodi-gateway.php(79): WC_Noqodi_Payment_Gateway->CallPreAuth(92)
+#1 C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\class-wc-checkout.php(938): WC_Noqodi_Payment_Gateway->process_payment(92)
+#2 C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\class-wc-checkout.php(1141): WC_Checkout->process_order_payment(92, 'noqodi_payment')
+#3 C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\class-wc-ajax.php(464): WC_Checkout->process_checkout()
+#4 C:\xampp\htdocs\wpfive\wp-includes\class-wp-hook.php(287): WC_AJAX::checkout('')
+#5 C:\xampp\htdocs\wpfive\wp-includes\class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#6 C:\xampp\htdocs\wpfive\wp-includes\plugin.php(478): WP_Hook->do_action(Array)
+#7 C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\class-wc in C:\xampp\htdocs\wpfive\wp-content\plugins\noqodi\noqodi-gateway.php on line 134
+
+2020-06-09T14:38:45+00:00 CRITICAL Uncaught Error: Call to a member function changeset_uuid() on null in C:\xampp\htdocs\wpfive\wp-content\plugins\noqodi\noqodi-gateway.php:127
+Stack trace:
+#0 C:\xampp\htdocs\wpfive\wp-content\plugins\noqodi\noqodi-gateway.php(79): WC_Noqodi_Payment_Gateway->CallPreAuth(92)
+#1 C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\class-wc-checkout.php(938): WC_Noqodi_Payment_Gateway->process_payment(92)
+#2 C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\class-wc-checkout.php(1141): WC_Checkout->process_order_payment(92, 'noqodi_payment')
+#3 C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\class-wc-ajax.php(464): WC_Checkout->process_checkout()
+#4 C:\xampp\htdocs\wpfive\wp-includes\class-wp-hook.php(287): WC_AJAX::checkout('')
+#5 C:\xampp\htdocs\wpfive\wp-includes\class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#6 C:\xampp\htdocs\wpfive\wp-includes\plugin.php(478): WP_Hook->do_action(Array)
+#7 C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\class-wc in C:\xampp\htdocs\wpfive\wp-content\plugins\noqodi\noqodi-gateway.php on line 127
+
+2020-06-09T14:42:37+00:00 CRITICAL Uncaught Error: Call to a member function changeset_uuid() on null in C:\xampp\htdocs\wpfive\wp-content\plugins\noqodi\noqodi-gateway.php:127
+Stack trace:
+#0 C:\xampp\htdocs\wpfive\wp-content\plugins\noqodi\noqodi-gateway.php(79): WC_Noqodi_Payment_Gateway->CallPreAuth(92)
+#1 C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\class-wc-checkout.php(938): WC_Noqodi_Payment_Gateway->process_payment(92)
+#2 C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\class-wc-checkout.php(1141): WC_Checkout->process_order_payment(92, 'noqodi_payment')
+#3 C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\class-wc-ajax.php(464): WC_Checkout->process_checkout()
+#4 C:\xampp\htdocs\wpfive\wp-includes\class-wp-hook.php(287): WC_AJAX::checkout('')
+#5 C:\xampp\htdocs\wpfive\wp-includes\class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#6 C:\xampp\htdocs\wpfive\wp-includes\plugin.php(478): WP_Hook->do_action(Array)
+#7 C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\class-wc in C:\xampp\htdocs\wpfive\wp-content\plugins\noqodi\noqodi-gateway.php on line 127
+
+2020-06-09T14:44:23+00:00 CRITICAL Uncaught Error: Call to a member function changeset_uuid() on null in C:\xampp\htdocs\wpfive\wp-content\plugins\noqodi\noqodi-gateway.php:134
+Stack trace:
+#0 C:\xampp\htdocs\wpfive\wp-content\plugins\noqodi\noqodi-gateway.php(79): WC_Noqodi_Payment_Gateway->CallPreAuth(92)
+#1 C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\class-wc-checkout.php(938): WC_Noqodi_Payment_Gateway->process_payment(92)
+#2 C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\class-wc-checkout.php(1141): WC_Checkout->process_order_payment(92, 'noqodi_payment')
+#3 C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\class-wc-ajax.php(464): WC_Checkout->process_checkout()
+#4 C:\xampp\htdocs\wpfive\wp-includes\class-wp-hook.php(287): WC_AJAX::checkout('')
+#5 C:\xampp\htdocs\wpfive\wp-includes\class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#6 C:\xampp\htdocs\wpfive\wp-includes\plugin.php(478): WP_Hook->do_action(Array)
+#7 C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\class-wc in C:\xampp\htdocs\wpfive\wp-content\plugins\noqodi\noqodi-gateway.php on line 134
+
+2020-06-09T14:46:59+00:00 CRITICAL Uncaught Error: Call to a member function changeset_uuid() on null in C:\xampp\htdocs\wpfive\wp-content\plugins\noqodi\noqodi-gateway.php:135
+Stack trace:
+#0 C:\xampp\htdocs\wpfive\wp-content\plugins\noqodi\noqodi-gateway.php(79): WC_Noqodi_Payment_Gateway->CallPreAuth(92)
+#1 C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\class-wc-checkout.php(938): WC_Noqodi_Payment_Gateway->process_payment(92)
+#2 C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\class-wc-checkout.php(1141): WC_Checkout->process_order_payment(92, 'noqodi_payment')
+#3 C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\class-wc-ajax.php(464): WC_Checkout->process_checkout()
+#4 C:\xampp\htdocs\wpfive\wp-includes\class-wp-hook.php(287): WC_AJAX::checkout('')
+#5 C:\xampp\htdocs\wpfive\wp-includes\class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#6 C:\xampp\htdocs\wpfive\wp-includes\plugin.php(478): WP_Hook->do_action(Array)
+#7 C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\class-wc in C:\xampp\htdocs\wpfive\wp-content\plugins\noqodi\noqodi-gateway.php on line 135
+
+2020-06-09T14:47:09+00:00 CRITICAL Uncaught Error: Call to a member function changeset_uuid() on null in C:\xampp\htdocs\wpfive\wp-content\plugins\noqodi\noqodi-gateway.php:135
+Stack trace:
+#0 C:\xampp\htdocs\wpfive\wp-content\plugins\noqodi\noqodi-gateway.php(79): WC_Noqodi_Payment_Gateway->CallPreAuth(92)
+#1 C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\class-wc-checkout.php(938): WC_Noqodi_Payment_Gateway->process_payment(92)
+#2 C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\class-wc-checkout.php(1141): WC_Checkout->process_order_payment(92, 'noqodi_payment')
+#3 C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\class-wc-ajax.php(464): WC_Checkout->process_checkout()
+#4 C:\xampp\htdocs\wpfive\wp-includes\class-wp-hook.php(287): WC_AJAX::checkout('')
+#5 C:\xampp\htdocs\wpfive\wp-includes\class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#6 C:\xampp\htdocs\wpfive\wp-includes\plugin.php(478): WP_Hook->do_action(Array)
+#7 C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\class-wc in C:\xampp\htdocs\wpfive\wp-content\plugins\noqodi\noqodi-gateway.php on line 135
+
+2020-06-09T14:49:24+00:00 CRITICAL Uncaught Error: Call to a member function changeset_uuid() on null in C:\xampp\htdocs\wpfive\wp-content\plugins\noqodi\noqodi-gateway.php:128
+Stack trace:
+#0 C:\xampp\htdocs\wpfive\wp-content\plugins\noqodi\noqodi-gateway.php(79): WC_Noqodi_Payment_Gateway->CallPreAuth(92)
+#1 C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\class-wc-checkout.php(938): WC_Noqodi_Payment_Gateway->process_payment(92)
+#2 C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\class-wc-checkout.php(1141): WC_Checkout->process_order_payment(92, 'noqodi_payment')
+#3 C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\class-wc-ajax.php(464): WC_Checkout->process_checkout()
+#4 C:\xampp\htdocs\wpfive\wp-includes\class-wp-hook.php(287): WC_AJAX::checkout('')
+#5 C:\xampp\htdocs\wpfive\wp-includes\class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#6 C:\xampp\htdocs\wpfive\wp-includes\plugin.php(478): WP_Hook->do_action(Array)
+#7 C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\class-wc in C:\xampp\htdocs\wpfive\wp-content\plugins\noqodi\noqodi-gateway.php on line 128
+
+2020-06-09T14:54:13+00:00 CRITICAL Uncaught Error: Call to a member function changeset_uuid() on null in C:\xampp\htdocs\wpfive\wp-content\plugins\noqodi\noqodi-gateway.php:101
+Stack trace:
+#0 C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\class-wc-checkout.php(938): WC_Noqodi_Payment_Gateway->process_payment(92)
+#1 C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\class-wc-checkout.php(1141): WC_Checkout->process_order_payment(92, 'noqodi_payment')
+#2 C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\class-wc-ajax.php(464): WC_Checkout->process_checkout()
+#3 C:\xampp\htdocs\wpfive\wp-includes\class-wp-hook.php(287): WC_AJAX::checkout('')
+#4 C:\xampp\htdocs\wpfive\wp-includes\class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#5 C:\xampp\htdocs\wpfive\wp-includes\plugin.php(478): WP_Hook->do_action(Array)
+#6 C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\class-wc-ajax.php(89): do_action('wc_ajax_checkou...')
+#7 C:\xampp\htdocs\wpfive\wp-includes\class-wp-hook.php(287): WC_AJAX::d in C:\xampp\htdocs\wpfive\wp-content\plugins\noqodi\noqodi-gateway.php on line 101
+
+2020-06-09T14:55:44+00:00 CRITICAL Uncaught Error: Call to a member function changeset_uuid() on null in C:\xampp\htdocs\wpfive\wp-content\plugins\noqodi\noqodi-gateway.php:101
+Stack trace:
+#0 C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\class-wc-checkout.php(938): WC_Noqodi_Payment_Gateway->process_payment(93)
+#1 C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\class-wc-checkout.php(1141): WC_Checkout->process_order_payment(93, 'noqodi_payment')
+#2 C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\class-wc-ajax.php(464): WC_Checkout->process_checkout()
+#3 C:\xampp\htdocs\wpfive\wp-includes\class-wp-hook.php(287): WC_AJAX::checkout('')
+#4 C:\xampp\htdocs\wpfive\wp-includes\class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#5 C:\xampp\htdocs\wpfive\wp-includes\plugin.php(478): WP_Hook->do_action(Array)
+#6 C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\class-wc-ajax.php(89): do_action('wc_ajax_checkou...')
+#7 C:\xampp\htdocs\wpfive\wp-includes\class-wp-hook.php(287): WC_AJAX::d in C:\xampp\htdocs\wpfive\wp-content\plugins\noqodi\noqodi-gateway.php on line 101
+
+2020-06-09T14:57:53+00:00 CRITICAL Uncaught Error: Call to a member function changeset_uuid() on null in C:\xampp\htdocs\wpfive\wp-content\plugins\noqodi\noqodi-gateway.php:73
+Stack trace:
+#0 C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\class-wc-checkout.php(938): WC_Noqodi_Payment_Gateway->process_payment(93)
+#1 C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\class-wc-checkout.php(1141): WC_Checkout->process_order_payment(93, 'noqodi_payment')
+#2 C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\class-wc-ajax.php(464): WC_Checkout->process_checkout()
+#3 C:\xampp\htdocs\wpfive\wp-includes\class-wp-hook.php(287): WC_AJAX::checkout('')
+#4 C:\xampp\htdocs\wpfive\wp-includes\class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#5 C:\xampp\htdocs\wpfive\wp-includes\plugin.php(478): WP_Hook->do_action(Array)
+#6 C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\class-wc-ajax.php(89): do_action('wc_ajax_checkou...')
+#7 C:\xampp\htdocs\wpfive\wp-includes\class-wp-hook.php(287): WC_AJAX::do in C:\xampp\htdocs\wpfive\wp-content\plugins\noqodi\noqodi-gateway.php on line 73
+

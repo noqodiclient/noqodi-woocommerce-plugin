@@ -1,0 +1,22 @@
+2020-06-04T12:19:50+00:00 CRITICAL Uncaught Error: Call to undefined function callAPI() in C:\xampp\htdocs\wpfive\wp-content\plugins\noqodi\noqodi-gateway.php:121
+Stack trace:
+#0 C:\xampp\htdocs\wpfive\wp-content\plugins\noqodi\noqodi-gateway.php(79): WC_Noqodi_Payment_Gateway->CallPreAuth()
+#1 C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\class-wc-checkout.php(938): WC_Noqodi_Payment_Gateway->process_payment(30)
+#2 C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\class-wc-checkout.php(1141): WC_Checkout->process_order_payment(30, 'noqodi_payment')
+#3 C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\class-wc-ajax.php(464): WC_Checkout->process_checkout()
+#4 C:\xampp\htdocs\wpfive\wp-includes\class-wp-hook.php(287): WC_AJAX::checkout('')
+#5 C:\xampp\htdocs\wpfive\wp-includes\class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#6 C:\xampp\htdocs\wpfive\wp-includes\plugin.php(478): WP_Hook->do_action(Array)
+#7 C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\class-wc-ajax.php(89): d in C:\xampp\htdocs\wpfive\wp-content\plugins\noqodi\noqodi-gateway.php on line 121
+
+2020-06-04T12:25:43+00:00 CRITICAL Uncaught Error: Call to undefined function callAPI() in C:\xampp\htdocs\wpfive\wp-content\plugins\noqodi\noqodi-gateway.php:121
+Stack trace:
+#0 C:\xampp\htdocs\wpfive\wp-content\plugins\noqodi\noqodi-gateway.php(79): WC_Noqodi_Payment_Gateway->CallPreAuth()
+#1 C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\class-wc-checkout.php(938): WC_Noqodi_Payment_Gateway->process_payment(31)
+#2 C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\class-wc-checkout.php(1141): WC_Checkout->process_order_payment(31, 'noqodi_payment')
+#3 C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\class-wc-ajax.php(464): WC_Checkout->process_checkout()
+#4 C:\xampp\htdocs\wpfive\wp-includes\class-wp-hook.php(287): WC_AJAX::checkout('')
+#5 C:\xampp\htdocs\wpfive\wp-includes\class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#6 C:\xampp\htdocs\wpfive\wp-includes\plugin.php(478): WP_Hook->do_action(Array)
+#7 C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\class-wc-ajax.php(89): d in C:\xampp\htdocs\wpfive\wp-content\plugins\noqodi\noqodi-gateway.php on line 121
+
