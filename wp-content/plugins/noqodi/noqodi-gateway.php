@@ -1,11 +1,11 @@
 <?php
 /*
- * Plugin Name: noqodi Payment Gateway
- * Plugin URI: https://rudrastyh.com/woocommerce/payment-gateway-plugin.html
- * Description: This plugin allows for Noqodi payment gateway system
- * Author: Sushma Rama
- * Author URI: https://www.noqodi.com
- * Version: 0.1.0
+ * Plugin Name: noqodi Payment Gateway for WooCommerce
+   Plugin URI:
+   Description: This plugin allows for noqodi payment gateway system
+   Author: Sushma Rama
+   Author URI: https://www.noqodi.com
+   Version: 0.1.0
  */
 
 
@@ -28,12 +28,16 @@ function noqodi_payment_init() {
             $this->merchantCode = $this->get_option( 'merchantCode' );
             $this->noqodi_gateway_host = $this->get_option( 'noqodi_gateway_host' );
             $this->noqodi_api_host = $this->get_option( 'noqodi_api_host' );
-            $this->authorizationCode = $this->get_option( 'authorizationCode' );
-            $this->instructions = $this->get_option( 'instructions',
-            $this->description );
+            //$this->authorizationCode = $this->get_option( 'authorizationCode' );
+            $this->client_id = $this->get_option( 'client_id' );
+            $this->client_secret = $this->get_option( 'client_secret' );
+            //$this->is_auto_capture_enabled = $this->get_option( 'is_auto_capture_enabled' );
+            $this->is_auto_capture_enabled = 'yes';
+            $this->instructions = $this->get_option( 'instructions');
+            $this->description = $this->get_option( 'description');
 			$this->init_form_fields();
 			$this->init_settings();
-			add_action('woocommerce_update_options_payment_gateways_' .$this->id, array( $this, 'process_admin_options') );
+		  	add_action('woocommerce_update_options_payment_gateways_' .$this->id, array( $this, 'process_admin_options') );
 
 	       if ( ! $this->is_valid_for_use() ) {
             			$this->enabled = 'no';
@@ -90,13 +94,26 @@ function noqodi_payment_init() {
                     		'default'       => __( 'https://paymentapi-dev02.noqodi.com/payment-api/v2/payments'),
                     		'desc_tip'      => true
            ),
-          'authorizationCode' => array(
-                          	'title'         => __( 'authorization code'),
-                          	'type'          => 'text',
-                          	'description'   => __( 'Authorization Code, given by the Bank'),
-                          	'placeholder'   => __( 'Authorization Code'),
-                          	'desc_tip'      => true
-          ),
+        'client_id' => array(
+                                    	'title'         => __( 'client id'),
+                                    	'type'          => 'text',
+                                    	'description'   => __( 'client id, given by the noqodi'),
+                                    	'placeholder'   => __( 'client id'),
+                                    	'desc_tip'      => true
+                    ),
+          'client_secret' => array(
+                                      	'title'         => __( 'client secret'),
+                                      	'type'          => 'text',
+                                      	'description'   => __( 'client secret, given by the noqodi'),
+                                      	'placeholder'   => __( 'client secret'),
+                                      	'desc_tip'      => true
+                      ),
+          'is_auto_capture_enabled' => array(
+          			'title' => _( 'Enable/Disable auto capture'),
+          			'type' =>'checkbox',
+          			'label' => _( 'Enable or Disable noqodi auto capture'),
+          			'default' => 'yes'
+          			),
           'debug'         => array(
                             'title'       => __( 'debug log', 'woocommerce' ),
                             'type'        => 'checkbox',
@@ -116,12 +133,14 @@ function noqodi_payment_init() {
 		}
 		public function process_payment( $order_id)
 		{
+		 $this->is_capture_executed=false;
     	 $order = wc_get_order( $order_id );
          if ( ! $order ) {
          $order_id = wc_get_order_id_by_order_key( $order_key );
          $order    = wc_get_order( $order_id );
          }
          $response_json = $this->callPreAuth($order_id) ;
+         var_dump($response_json);
          foreach ($response_json as $key => $item) {
             foreach($item as $key => $name){
                 if($key == 'status'){
@@ -149,7 +168,7 @@ function noqodi_payment_init() {
          	'redirect'	=> '',
              );
          }
-        return array('result' => 'success','redirect' =>$this->noqodi_gateway_host.'?paymentRequestToken='.$preAuthToken.'&hosted=true');
+          return array('result' => 'success','redirect' =>$this->noqodi_gateway_host.'?paymentRequestToken='.$preAuthToken.'&hosted=true');
    		}
 
         function CallPreAuth($order_id)
@@ -161,21 +180,20 @@ function noqodi_payment_init() {
                            			$order    = wc_get_order( $order_id );
                            		}
         $order_key =$order->get_order_key();
-        $data_array =  array(
+        $noqodi_preauth_request_array =  array(
               "serviceType"        => "PRE_AUTH",
               "serviceMode" => "NORMAL",
               "merchantInfo"         => array(
                     "merchantCode"         => $this->merchantCode,
                     "merchantLandingURL"   => home_url('/').'checkout/order-received/'.$order_id.'/?key='.$order_key.'&utm_nooverride=',
                     "merchantRequestId"    => wp_generate_uuid4(),
-                    "merchantOrderId"      => wp_generate_uuid4()
+                    "merchantOrderId"      => $order_id
               ),
               "paymentInfo"                => array(
                      "amount"              => array(
                      "value"               => $order->get_total(),
                      "currency"        => get_woocommerce_currency()
               ),
-              "serviceProvided"   => "true",
               "pricingInfo"       => array(
                      "paymentTypes"    => array(
                                      "CCD","ECA"
@@ -183,17 +201,76 @@ function noqodi_payment_init() {
               ),
             )
         );
-        $make_call = $this->callAPI('POST', $this->noqodi_api_host.'/preAuth', json_encode($data_array));
-        $response = json_decode($make_call, true);
-        $errors = $response['response']['errors'];
-        $data = $response['response']['data'][0];
-          return $response;
+        $access_token=$this->generateAccessToken('POST', $this->noqodi_api_host.'/oauth/token/client-credentials');
+         update_post_meta( $order->get_id(), 'PRE_AUTH_REQUEST', $noqodi_preauth_request_array,'' );
+         if ( ! add_post_meta( $order->get_id(), 'PRE_AUTH_REQUEST', $noqodi_preauth_request_array, true ) ) {
+         update_post_meta ( $order->get_id(), 'PRE_AUTH_REQUEST', $noqodi_preauth_request_array );
+         }
+        $make_call = $this->callAPI('POST', $this->noqodi_api_host.'/v2/payments/preAuth', json_encode($noqodi_preauth_request_array),$access_token);
+        $noqodi_preauth_response = json_decode($make_call, true);
+        $errors = $noqodi_preauth_response['response']['errors'];
+        $data = $noqodi_preauth_response['response']['data'][0];
+        update_post_meta( $order->get_id(), 'PRE_AUTH_RESPONSE', $noqodi_preauth_response,'' );
+        if ( ! add_post_meta( $order->get_id(), 'PRE_AUTH_RESPONSE', $noqodi_preauth_response, true ) ) {
+        update_post_meta ( $order->get_id(), 'PRE_AUTH_RESPONSE', $noqodi_preauth_response );
         }
-        function callAPI($method, $url, $data){
+          return $noqodi_preauth_response;
+        }
+        function generateAccessToken($method, $url){
+                   $curl = curl_init();
+                   curl_setopt($curl, CURLOPT_URL, $url);
+                   curl_setopt($curl, CURLOPT_HTTPHEADER, array(
+                   'Content-Type: application/json',
+                          ));
+                   curl_setopt($curl, CURLOPT_USERPWD, $this->client_id . ":" . $this->client_secret);
+                   curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+                   curl_setopt($curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
+                   curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+                   $result = curl_exec($curl);
+                   curl_close($curl);
+                   $response = json_decode($result, true);
+                   $errors = $response['response']['errors'];
+                   $data = $response['response']['data'][0];
+                  foreach ($response as $key => $item) {
+                        if($key == 'statusInfo'){
+                             foreach($item as $key => $name1){
+                               if($key == 'status'){
+                                  $access_token_resposne_status =$name1;
+                                            }
+                                    elseif($key == 'errorCode')
+                                    {
+                                            foreach($name1 as $key => $name4)
+                                            {
+                                                if($key == 'message'){
+                                                  $noqodi_error_msg =$name4;
+                                                 }
+                                            }
+                                     }
+                                   }
+                                 }
+                         if($key == 'access_token')
+                         {
+                         $access_token=$item;
+                         }
+                        }
+
+                if($access_token_resposne_status=='FAILURE')
+                    {
+           		    wc_add_notice( __( 'Payment error: Failed to get access to noqodi server. '.$noqodi_error_msg, 'woo-noqodi' ), 'error' );
+               		return array(
+                    	'result'	=> 'fail',
+                    	'redirect'	=> '',
+                        );
+                    }
+               else
+                    return $access_token;
+
+                }
+        function callAPI($method, $url, $data,$access_token){
            $curl = curl_init();
            curl_setopt($curl, CURLOPT_URL, $url);
            curl_setopt($curl, CURLOPT_HTTPHEADER, array(
-                     'Authorization: '.$this->authorizationCode,
+                     'Authorization: Bearer '.$access_token,
                      'Content-Type: application/json',
                   ));
            curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
@@ -203,13 +280,20 @@ function noqodi_payment_init() {
                curl_close($curl);
                return $result;
         }
-        	public function order_received_text( $text, $order ) {
+        public function order_received_text( $text, $order ) {
              $noqodi_auth_response = apply_filters( 'woocommerce_thankyou_order_key', empty( $_GET['utm_nooverride'] ) ? '' : wc_clean( wp_unslash( $_GET['utm_nooverride'] ) ) );
              $noqodi_auth_response_updated='['.$noqodi_auth_response.']';
              $final_noqodi_auth_response = json_decode($noqodi_auth_response_updated, true);
-           	  foreach ($final_noqodi_auth_response as $key => $item) {
+             $noqodi_auth_response_status ='';
+             $noqodi_error_msg = '';
+             $merchantOrderId = '';
+             $noqodiOrderId = '';
+             $noqodi_auth_response_status = '';
+             $noqodi_capture_response_status ='';
+
+          	  foreach ($final_noqodi_auth_response as $key => $item) {
                    foreach($item as $key => $name){
-                     if($key == 'statusInfo'){
+                      if($key == 'statusInfo'){
                      foreach($name as $key => $name1){
                             if($key == 'status'){
                                   $noqodi_auth_response_status =$name1;
@@ -225,21 +309,139 @@ function noqodi_payment_init() {
                              }
                            }
                          }
+                       if($key == 'merchantInfo')
+                       {
+                        foreach($name as $key => $name1){
+                          if($key == 'merchantOrderId'){
+                            $merchantOrderId=$name1;
+                          }
+                        }
                        }
+                        if($key == 'paymentInfo')
+                        {
+                          foreach($name as $key => $name1){
+                            if($key == 'noqodiOrderId'){
+                               $noqodiOrderId=$name1;
+                            }
+                          }
+                        }
+                      }
                      }
+                   update_post_meta( $order->get_id(), 'AUTH_RESPONSE', $noqodi_auth_response,'' );
+                   if ( ! add_post_meta( $order->get_id(), 'AUTH_RESPONSE', $noqodi_auth_response, true ) ) {
+                       update_post_meta ( $order->get_id(), 'AUTH_RESPONSE', $noqodi_auth_response );
+                   }
 
         	if($noqodi_auth_response_status=='SUCCESS'){
-                 $order->set_status( apply_filters( 'woocommerce_payment_complete_order_status',  'completed', $order->get_id(), $order ) );
+
+        	if($order->get_status() !='completed')
+        	{
+        	 $order->set_status( apply_filters( 'woocommerce_payment_complete_order_status',  'on-hold', $order->get_id(), $order ) );
+             $order->save();
+
+           if($this->is_auto_capture_enabled == 'yes')
+            {
+        	  $noqodi_capture_request_array =  array(
+                          "serviceType"        => "CAPTURE",
+                          "merchantInfo"         => array(
+                                "merchantCode"         => $this->merchantCode,
+                                "merchantRequestId"    => wp_generate_uuid4(),
+                                "merchantOrderId"      => $merchantOrderId
+                          ),
+                          "paymentInfo"                => array(
+                                 "amount"              => array(
+                                 "value"               => $order->get_total(),
+                                 "currency"        => get_woocommerce_currency()
+                          ),
+                         "noqodiOrderId"    => $noqodiOrderId,
+                          "transactions"       => array(
+                                                    array(
+                                                         "merchantCode"         => $this->merchantCode,
+                                                         "merchantReferenceId"    => wp_generate_uuid4(),
+                                                         "transactionAmount"    => array(
+                                                         "value"               => $order->get_total(),
+                                                         "currency"        => get_woocommerce_currency()
+                                                          ),
+                                                     ),
+                          ),
+                        )
+                    );
+                 $access_token=$this->generateAccessToken('POST', $this->noqodi_api_host.'/oauth/token/client-credentials');
+                  update_post_meta( $order->get_id(), 'CAPTURE_REQUEST', $noqodi_capture_request_array,'' );
+                  if ( ! add_post_meta( $order->get_id(), 'CAPTURE_REQUEST', $noqodi_capture_request_array, true ) ) {
+                  update_post_meta ( $order->get_id(), 'CAPTURE_REQUEST', $noqodi_capture_request_array );
+                  }
+                 $make_call = $this->callAPI('POST', $this->noqodi_api_host.'/v2/payments/capture', json_encode($noqodi_capture_request_array),$access_token);
+                 $noqodi_capture_response = json_decode($make_call, true);
+                 $errors = $noqodi_capture_response['response']['errors'];
+                 $data = $noqodi_capture_response['response']['data'][0];
+
+                 update_post_meta( $order->get_id(), 'CAPTURE_RESPONSE', $noqodi_capture_response,'' );
+                 if ( ! add_post_meta( $order->get_id(), 'CAPTURE_RESPONSE', $noqodi_capture_response, true ) ) {
+                 update_post_meta ( $order->get_id(), 'CAPTURE_RESPONSE', $noqodi_capture_response );
+                 }
+             foreach ($noqodi_capture_response as $key => $item) {
+                            if($key == 'statusInfo'){
+                               foreach($item as $key => $name1){
+                                   if($key == 'status'){
+                                        $noqodi_capture_response_status =$name1;
+                                   }
+                                   elseif($key == 'errorCode')
+                                   {
+                                     foreach($name1 as $key => $name4)
+                                     {
+                                        if($key == 'message'){
+                                        $noqodi_error_msg =$name4;
+                                        }
+                                      }
+                                   }
+                               }
+                          }
+                 }
+
+                 if($noqodi_capture_response_status=='SUCCESS'){
+                 $order->set_status( apply_filters( 'woocommerce_payment_complete_order_status',  'processing', $order->get_id(), $order ) );
                  $msg="Thank you for your payment. Your transaction has been completed, and a receipt for your purchase has been emailed to you. Log into your Noqodi account to view transaction details.";
-             } else {
-                 $order->set_status( apply_filters( 'woocommerce_payment_complete_order_status',  'Failed', $order->get_id(), $order ) );
+                 }
+                 else
+                 {
+                 $order->set_status( apply_filters( 'woocommerce_payment_complete_order_status',  'pending', $order->get_id(), $order ) );
                  $msg="noqodi payment is unsuccessful. Error: ".$noqodi_error_msg;
-               }
-            $order->save();
-            do_action( 'woocommerce_payment_complete', $order->get_id() );
+                 }
+                 }
+                 else
+                 {
+
+                      $order->set_status( apply_filters( 'woocommerce_payment_complete_order_status',  'on-hold', $order->get_id(), $order ) );
+                      $msg="Thank you for your payment. Your transaction has been completed, and a receipt for your purchase has been emailed to you. Log into your Noqodi account to view transaction details.".$noqodi_error_msg;
+                 }
+                  $order->save();
+                  do_action( 'woocommerce_payment_complete', $order->get_id() );
+                  WC()->cart->empty_cart();
+                  if ( $order && $this->id === $order->get_payment_method() ) {
+                   return esc_html__( $msg, 'woocommerce' );
+                 }
+
+                }
+             }
+             elseif($noqodi_auth_response_status=='CANCELLED'){
+              $order->set_status( apply_filters( 'woocommerce_payment_complete_order_status',  'cancelled', $order->get_id(), $order ) );
+              $msg="noqodi payment is unsuccessful. Error: ".$noqodi_error_msg;
+              $order->save();
+              do_action( 'woocommerce_payment_complete', $order->get_id() );
+              if ( $order && $this->id === $order->get_payment_method() ) {
+              return esc_html__( $msg, 'woocommerce' );
+              }
+             }
+             else {
+             $order->set_status( apply_filters( 'woocommerce_payment_complete_order_status',  'failed', $order->get_id(), $order ) );
+             $msg="noqodi payment is unsuccessful. Error: ".$noqodi_error_msg;
+             $order->save();
+             do_action( 'woocommerce_payment_complete', $order->get_id() );
              if ( $order && $this->id === $order->get_payment_method() ) {
-     			return esc_html__( $msg, 'woocommerce' );
-        		}
+                  return esc_html__( $msg, 'woocommerce' );
+               }
+       	   	}
         		return $text;
         	}
         /**
