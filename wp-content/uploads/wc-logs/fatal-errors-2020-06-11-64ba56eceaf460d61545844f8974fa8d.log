@@ -1,0 +1,62 @@
+2020-06-11T10:56:36+00:00 CRITICAL Uncaught Error: Call to a member function get_return_url() on null in C:\xampp\htdocs\wpfive\wp-content\plugins\noqodi\noqodi-gateway.php:122
+Stack trace:
+#0 C:\xampp\htdocs\wpfive\wp-content\plugins\noqodi\noqodi-gateway.php(81): WC_Noqodi_Payment_Gateway->CallPreAuth(101)
+#1 C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\class-wc-checkout.php(938): WC_Noqodi_Payment_Gateway->process_payment(101)
+#2 C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\class-wc-checkout.php(1141): WC_Checkout->process_order_payment(101, 'noqodi_payment')
+#3 C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\class-wc-ajax.php(464): WC_Checkout->process_checkout()
+#4 C:\xampp\htdocs\wpfive\wp-includes\class-wp-hook.php(287): WC_AJAX::checkout('')
+#5 C:\xampp\htdocs\wpfive\wp-includes\class-wp-hook.php(311): WP_Hook->apply_filters('', Array)
+#6 C:\xampp\htdocs\wpfive\wp-includes\plugin.php(478): WP_Hook->do_action(Array)
+#7 C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\class in C:\xampp\htdocs\wpfive\wp-content\plugins\noqodi\noqodi-gateway.php on line 122
+
+2020-06-11T12:54:45+00:00 CRITICAL Uncaught Error: Call to undefined method WC_Noqodi_Payment_Gateway::is_valid_for_use() in C:\xampp\htdocs\wpfive\wp-content\plugins\noqodi\noqodi-gateway.php:40
+Stack trace:
+#0 C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\class-wc-payment-gateways.php(94): WC_Noqodi_Payment_Gateway->__construct()
+#1 C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\class-wc-payment-gateways.php(70): WC_Payment_Gateways->init()
+#2 C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\class-wc-payment-gateways.php(43): WC_Payment_Gateways->__construct()
+#3 C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\class-woocommerce.php(826): WC_Payment_Gateways::instance()
+#4 C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\admin\class-wc-admin-menus.php(91): WooCommerce->payment_gateways()
+#5 C:\xampp\htdocs\wpfive\wp-includes\class-wp-hook.php(287): WC_Admin_Menus->settings_page_init('')
+#6 C:\xampp\htdocs\wpfive\wp-includes\class-wp-hook.php(311): WP_Hook->apply_filte in C:\xampp\htdocs\wpfive\wp-content\plugins\noqodi\noqodi-gateway.php on line 40
+
+2020-06-11T12:58:01+00:00 CRITICAL Uncaught Error: Call to undefined method WC_Noqodi_Payment_Gateway::is_valid_for_use() in C:\xampp\htdocs\wpfive\wp-content\plugins\noqodi\noqodi-gateway.php:40
+Stack trace:
+#0 C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\class-wc-payment-gateways.php(94): WC_Noqodi_Payment_Gateway->__construct()
+#1 C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\class-wc-payment-gateways.php(70): WC_Payment_Gateways->init()
+#2 C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\class-wc-payment-gateways.php(43): WC_Payment_Gateways->__construct()
+#3 C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\class-woocommerce.php(826): WC_Payment_Gateways::instance()
+#4 C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\admin\class-wc-admin-menus.php(91): WooCommerce->payment_gateways()
+#5 C:\xampp\htdocs\wpfive\wp-includes\class-wp-hook.php(287): WC_Admin_Menus->settings_page_init('')
+#6 C:\xampp\htdocs\wpfive\wp-includes\class-wp-hook.php(311): WP_Hook->apply_filte in C:\xampp\htdocs\wpfive\wp-content\plugins\noqodi\noqodi-gateway.php on line 40
+
+2020-06-11T12:58:04+00:00 CRITICAL Uncaught Error: Call to undefined method WC_Noqodi_Payment_Gateway::is_valid_for_use() in C:\xampp\htdocs\wpfive\wp-content\plugins\noqodi\noqodi-gateway.php:40
+Stack trace:
+#0 C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\class-wc-payment-gateways.php(94): WC_Noqodi_Payment_Gateway->__construct()
+#1 C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\class-wc-payment-gateways.php(70): WC_Payment_Gateways->init()
+#2 C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\class-wc-payment-gateways.php(43): WC_Payment_Gateways->__construct()
+#3 C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\class-woocommerce.php(826): WC_Payment_Gateways::instance()
+#4 C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\admin\class-wc-admin-menus.php(91): WooCommerce->payment_gateways()
+#5 C:\xampp\htdocs\wpfive\wp-includes\class-wp-hook.php(287): WC_Admin_Menus->settings_page_init('')
+#6 C:\xampp\htdocs\wpfive\wp-includes\class-wp-hook.php(311): WP_Hook->apply_filte in C:\xampp\htdocs\wpfive\wp-content\plugins\noqodi\noqodi-gateway.php on line 40
+
+2020-06-11T13:29:59+00:00 CRITICAL Cannot declare class WC_Gateway_Paypal_Response, because the name is already in use in C:\xampp\htdocs\wpfive\wp-content\plugins\noqodi\includes\class-wc-gateway-paypal-response.php on line 15
+
+2020-06-11T13:31:24+00:00 CRITICAL Cannot declare class WC_Gateway_Paypal_Response, because the name is already in use in C:\xampp\htdocs\wpfive\wp-content\plugins\noqodi\includes\class-wc-gateway-paypal-response.php on line 15
+
+2020-06-11T13:40:16+00:00 CRITICAL require_once(): Failed opening required 'C:\xampp\htdocs\wpfive\wp-content\plugins\noqodi\includes/class-wc-gateway-paypal-response.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\wpfive\wp-content\plugins\noqodi\includes\class-wc-gateway-paypal-ipn-handler.php on line 13
+
+2020-06-11T13:41:35+00:00 CRITICAL require_once(): Failed opening required 'C:\xampp\htdocs\wpfive\wp-content\plugins\noqodi\includes/class-wc-gateway-noqodi-response.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\wpfive\wp-content\plugins\noqodi\includes\class-wc-gateway-paypal-ipn-handler.php on line 13
+
+2020-06-11T13:47:03+00:00 CRITICAL Cannot declare class WC_Gateway_Paypal_IPN_Handler, because the name is already in use in C:\xampp\htdocs\wpfive\wp-content\plugins\noqodi\includes\class-wc-gateway-paypal-ipn-handler.php on line 18
+
+2020-06-11T13:49:36+00:00 CRITICAL Uncaught Error: Class 'WC_Gateway_Noqodi_IPN_Handler' not found in C:\xampp\htdocs\wpfive\wp-content\plugins\noqodi\noqodi-gateway.php:45
+Stack trace:
+#0 C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\class-wc-payment-gateways.php(94): WC_Noqodi_Payment_Gateway->__construct()
+#1 C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\class-wc-payment-gateways.php(70): WC_Payment_Gateways->init()
+#2 C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\class-wc-payment-gateways.php(43): WC_Payment_Gateways->__construct()
+#3 C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\class-woocommerce.php(826): WC_Payment_Gateways::instance()
+#4 C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\admin\class-wc-admin-menus.php(91): WooCommerce->payment_gateways()
+#5 C:\xampp\htdocs\wpfive\wp-includes\class-wp-hook.php(287): WC_Admin_Menus->settings_page_init('')
+#6 C:\xampp\htdocs\wpfive\wp-includes\class-wp-hook.php(311): WP_Hook->apply_filters(NULL, Array)
+#7 C:\x in C:\xampp\htdocs\wpfive\wp-content\plugins\noqodi\noqodi-gateway.php on line 45
+

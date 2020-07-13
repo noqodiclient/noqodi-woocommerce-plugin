@@ -1,0 +1,33 @@
+2020-06-16T09:26:12+00:00 CRITICAL Uncaught Error: Using $this when not in object context in C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\shortcodes\class-wc-shortcode-checkout.php:256
+Stack trace:
+#0 C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\shortcodes\class-wc-shortcode-checkout.php(63): WC_Shortcode_Checkout::order_received(116)
+#1 C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\class-wc-shortcodes.php(72): WC_Shortcode_Checkout::output('')
+#2 C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\class-wc-shortcodes.php(95): WC_Shortcodes::shortcode_wrapper(Array, '')
+#3 C:\xampp\htdocs\wpfive\wp-includes\shortcodes.php(343): WC_Shortcodes::checkout('', '', 'woocommerce_che...')
+#4 [internal function]: do_shortcode_tag(Array)
+#5 C:\xampp\htdocs\wpfive\wp-includes\shortcodes.php(218): preg_replace_callback('/\\[(\\[?)(woocom...', 'do_shortcode_ta...', '[woocommerce_ch...')
+#6 C:\xampp\htdocs\wpfive\wp-includes\class-wp-hook.php(287): do_shortcode('[woocommerce_ch...')
+#7 C:\xampp in C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\shortcodes\class-wc-shortcode-checkout.php on line 256
+
+2020-06-16T09:39:30+00:00 CRITICAL Uncaught Error: Using $this when not in object context in C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\shortcodes\class-wc-shortcode-checkout.php:256
+Stack trace:
+#0 C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\shortcodes\class-wc-shortcode-checkout.php(63): WC_Shortcode_Checkout::order_received(117)
+#1 C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\class-wc-shortcodes.php(72): WC_Shortcode_Checkout::output('')
+#2 C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\class-wc-shortcodes.php(95): WC_Shortcodes::shortcode_wrapper(Array, '')
+#3 C:\xampp\htdocs\wpfive\wp-includes\shortcodes.php(343): WC_Shortcodes::checkout('', '', 'woocommerce_che...')
+#4 [internal function]: do_shortcode_tag(Array)
+#5 C:\xampp\htdocs\wpfive\wp-includes\shortcodes.php(218): preg_replace_callback('/\\[(\\[?)(woocom...', 'do_shortcode_ta...', '[woocommerce_ch...')
+#6 C:\xampp\htdocs\wpfive\wp-includes\class-wp-hook.php(287): do_shortcode('[woocommerce_ch...')
+#7 C:\xampp in C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\shortcodes\class-wc-shortcode-checkout.php on line 256
+
+2020-06-16T09:40:53+00:00 CRITICAL Uncaught Error: Using $this when not in object context in C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\shortcodes\class-wc-shortcode-checkout.php:256
+Stack trace:
+#0 C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\shortcodes\class-wc-shortcode-checkout.php(63): WC_Shortcode_Checkout::order_received(117)
+#1 C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\class-wc-shortcodes.php(72): WC_Shortcode_Checkout::output('')
+#2 C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\class-wc-shortcodes.php(95): WC_Shortcodes::shortcode_wrapper(Array, '')
+#3 C:\xampp\htdocs\wpfive\wp-includes\shortcodes.php(343): WC_Shortcodes::checkout('', '', 'woocommerce_che...')
+#4 [internal function]: do_shortcode_tag(Array)
+#5 C:\xampp\htdocs\wpfive\wp-includes\shortcodes.php(218): preg_replace_callback('/\\[(\\[?)(woocom...', 'do_shortcode_ta...', '[woocommerce_ch...')
+#6 C:\xampp\htdocs\wpfive\wp-includes\class-wp-hook.php(287): do_shortcode('[woocommerce_ch...')
+#7 C:\xampp in C:\xampp\htdocs\wpfive\wp-content\plugins\woocommerce\includes\shortcodes\class-wc-shortcode-checkout.php on line 256
+

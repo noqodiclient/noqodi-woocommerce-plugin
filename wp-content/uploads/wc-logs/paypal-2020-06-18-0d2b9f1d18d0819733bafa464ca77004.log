@@ -1,0 +1,266 @@
+2020-06-18T04:35:18+00:00 INFO Generating payment form for order 143. Notify URL: http://localhost/wpfive/wc-api/WC_Gateway_Paypal/
+2020-06-18T04:35:18+00:00 INFO PayPal Request Args for order 143: Array
+(
+    [cmd] => _cart
+    [business] => ragssush@gmail.com
+    [no_note] => 1
+    [currency_code] => USD
+    [charset] => utf-8
+    [rm] => 1
+    [upload] => 1
+    [return] => http://localhost/wpfive/checkout/order-received/143/?key=wc_order_1DCnVllG4aAng&utm_nooverride=1
+    [cancel_return] => http://localhost/wpfive/cart/?cancel_order=true&order=wc_order_1DCnVllG4aAng&order_id=143&redirect&_wpnonce=7e7ba27aa2
+    [page_style] => 
+    [image_url] => 
+    [paymentaction] => authorization
+    [invoice] => WC-143
+    [custom] => {"order_id":143,"order_key":"wc_order_1DCnVllG4aAng"}
+    [notify_url] => http://localhost/wpfive/wc-api/WC_Gateway_Paypal/
+    [first_name] => ***
+    [last_name] => ***
+    [address1] => ***
+    [address2] => ***
+    [city] => ***
+    [state] => ***
+    [zip] => ***
+    [country] => ***
+    [email] => ***@***
+    [night_phone_a] => ***
+    [night_phone_b] => ***
+    [no_shipping] => 1
+    [tax_cart] => 0.00
+    [item_name_1] => TestProduct
+    [quantity_1] => 1
+    [amount_1] => 90
+    [item_number_1] => 
+    [bn] => WooThemes_Cart
+)
+
+2020-06-18T04:49:31+00:00 INFO Generating payment form for order 144. Notify URL: http://localhost/wpfive/wc-api/WC_Gateway_Paypal/
+2020-06-18T04:49:31+00:00 INFO PayPal Request Args for order 144: Array
+(
+    [cmd] => _cart
+    [business] => ragssush@gmail.com
+    [no_note] => 1
+    [currency_code] => USD
+    [charset] => utf-8
+    [rm] => 1
+    [upload] => 1
+    [return] => http://localhost/wpfive/checkout/order-received/144/?key=wc_order_qQFdzexCYwBGh&utm_nooverride=1
+    [cancel_return] => http://localhost/wpfive/cart/?cancel_order=true&order=wc_order_qQFdzexCYwBGh&order_id=144&redirect&_wpnonce=bd4ef3991d
+    [page_style] => 
+    [image_url] => 
+    [paymentaction] => authorization
+    [invoice] => WC-144
+    [custom] => {"order_id":144,"order_key":"wc_order_qQFdzexCYwBGh"}
+    [notify_url] => http://localhost/wpfive/wc-api/WC_Gateway_Paypal/
+    [first_name] => ***
+    [last_name] => ***
+    [address1] => ***
+    [address2] => ***
+    [city] => ***
+    [state] => ***
+    [zip] => ***
+    [country] => ***
+    [email] => ***@***
+    [night_phone_a] => ***
+    [night_phone_b] => ***
+    [no_shipping] => 1
+    [tax_cart] => 0.00
+    [item_name_1] => TestProduct
+    [quantity_1] => 1
+    [amount_1] => 90
+    [item_number_1] => 
+    [bn] => WooThemes_Cart
+)
+
+2020-06-18T05:23:39+00:00 INFO Generating payment form for order 144. Notify URL: http://localhost/wpfive/wc-api/WC_Gateway_Paypal/
+2020-06-18T05:23:39+00:00 INFO PayPal Request Args for order 144: Array
+(
+    [cmd] => _cart
+    [business] => ragssush@gmail.com
+    [no_note] => 1
+    [currency_code] => USD
+    [charset] => utf-8
+    [rm] => 1
+    [upload] => 1
+    [return] => http://localhost/wpfive/checkout/order-received/144/?key=wc_order_qQFdzexCYwBGh&utm_nooverride=1
+    [cancel_return] => http://localhost/wpfive/cart/?cancel_order=true&order=wc_order_qQFdzexCYwBGh&order_id=144&redirect&_wpnonce=bd4ef3991d
+    [page_style] => 
+    [image_url] => 
+    [paymentaction] => authorization
+    [invoice] => WC-144
+    [custom] => {"order_id":144,"order_key":"wc_order_qQFdzexCYwBGh"}
+    [notify_url] => http://localhost/wpfive/wc-api/WC_Gateway_Paypal/
+    [first_name] => ***
+    [last_name] => ***
+    [address1] => ***
+    [address2] => ***
+    [city] => ***
+    [state] => ***
+    [zip] => ***
+    [country] => ***
+    [email] => ***@***
+    [night_phone_a] => ***
+    [night_phone_b] => ***
+    [no_shipping] => 1
+    [tax_cart] => 0.00
+    [item_name_1] => TestProduct
+    [quantity_1] => 1
+    [amount_1] => 90
+    [item_number_1] => 
+    [bn] => WooThemes_Cart
+)
+
+2020-06-18T05:26:04+00:00 INFO Generating payment form for order 144. Notify URL: http://localhost/wpfive/wc-api/WC_Gateway_Paypal/
+2020-06-18T05:26:04+00:00 INFO PayPal Request Args for order 144: Array
+(
+    [cmd] => _cart
+    [business] => ragssush@gmail.com
+    [no_note] => 1
+    [currency_code] => USD
+    [charset] => utf-8
+    [rm] => 1
+    [upload] => 1
+    [return] => http://localhost/wpfive/checkout/order-received/144/?key=wc_order_qQFdzexCYwBGh&utm_nooverride=1
+    [cancel_return] => http://localhost/wpfive/cart/?cancel_order=true&order=wc_order_qQFdzexCYwBGh&order_id=144&redirect&_wpnonce=bd4ef3991d
+    [page_style] => 
+    [image_url] => 
+    [paymentaction] => sale
+    [invoice] => WC-144
+    [custom] => {"order_id":144,"order_key":"wc_order_qQFdzexCYwBGh"}
+    [notify_url] => http://localhost/wpfive/wc-api/WC_Gateway_Paypal/
+    [first_name] => ***
+    [last_name] => ***
+    [address1] => ***
+    [address2] => ***
+    [city] => ***
+    [state] => ***
+    [zip] => ***
+    [country] => ***
+    [email] => ***@***
+    [night_phone_a] => ***
+    [night_phone_b] => ***
+    [no_shipping] => 1
+    [tax_cart] => 0.00
+    [item_name_1] => TestProduct
+    [quantity_1] => 1
+    [amount_1] => 90
+    [item_number_1] => 
+    [bn] => WooThemes_Cart
+)
+
+2020-06-18T05:26:39+00:00 INFO Generating payment form for order 144. Notify URL: http://localhost/wpfive/wc-api/WC_Gateway_Paypal/
+2020-06-18T05:26:39+00:00 INFO PayPal Request Args for order 144: Array
+(
+    [cmd] => _cart
+    [business] => ragssush@gmail.com
+    [no_note] => 1
+    [currency_code] => USD
+    [charset] => utf-8
+    [rm] => 1
+    [upload] => 1
+    [return] => http://localhost/wpfive/checkout/order-received/144/?key=wc_order_qQFdzexCYwBGh&utm_nooverride=1
+    [cancel_return] => http://localhost/wpfive/cart/?cancel_order=true&order=wc_order_qQFdzexCYwBGh&order_id=144&redirect&_wpnonce=bd4ef3991d
+    [page_style] => 
+    [image_url] => 
+    [paymentaction] => authorization
+    [invoice] => WC-144
+    [custom] => {"order_id":144,"order_key":"wc_order_qQFdzexCYwBGh"}
+    [notify_url] => http://localhost/wpfive/wc-api/WC_Gateway_Paypal/
+    [first_name] => ***
+    [last_name] => ***
+    [address1] => ***
+    [address2] => ***
+    [city] => ***
+    [state] => ***
+    [zip] => ***
+    [country] => ***
+    [email] => ***@***
+    [night_phone_a] => ***
+    [night_phone_b] => ***
+    [no_shipping] => 1
+    [tax_cart] => 0.00
+    [item_name_1] => TestProduct
+    [quantity_1] => 1
+    [amount_1] => 90
+    [item_number_1] => 
+    [bn] => WooThemes_Cart
+)
+
+2020-06-18T05:26:58+00:00 INFO Generating payment form for order 144. Notify URL: http://localhost/wpfive/wc-api/WC_Gateway_Paypal/
+2020-06-18T05:26:58+00:00 INFO PayPal Request Args for order 144: Array
+(
+    [cmd] => _cart
+    [business] => ragssush@gmail.com
+    [no_note] => 1
+    [currency_code] => USD
+    [charset] => utf-8
+    [rm] => 1
+    [upload] => 1
+    [return] => http://localhost/wpfive/checkout/order-received/144/?key=wc_order_qQFdzexCYwBGh&utm_nooverride=1
+    [cancel_return] => http://localhost/wpfive/cart/?cancel_order=true&order=wc_order_qQFdzexCYwBGh&order_id=144&redirect&_wpnonce=bd4ef3991d
+    [page_style] => 
+    [image_url] => 
+    [paymentaction] => sale
+    [invoice] => WC-144
+    [custom] => {"order_id":144,"order_key":"wc_order_qQFdzexCYwBGh"}
+    [notify_url] => http://localhost/wpfive/wc-api/WC_Gateway_Paypal/
+    [first_name] => ***
+    [last_name] => ***
+    [address1] => ***
+    [address2] => ***
+    [city] => ***
+    [state] => ***
+    [zip] => ***
+    [country] => ***
+    [email] => ***@***
+    [night_phone_a] => ***
+    [night_phone_b] => ***
+    [no_shipping] => 1
+    [tax_cart] => 0.00
+    [item_name_1] => TestProduct
+    [quantity_1] => 1
+    [amount_1] => 90
+    [item_number_1] => 
+    [bn] => WooThemes_Cart
+)
+
+2020-06-18T05:27:25+00:00 INFO Generating payment form for order 144. Notify URL: http://localhost/wpfive/wc-api/WC_Gateway_Paypal/
+2020-06-18T05:27:25+00:00 INFO PayPal Request Args for order 144: Array
+(
+    [cmd] => _cart
+    [business] => ragssush@gmail.com
+    [no_note] => 1
+    [currency_code] => USD
+    [charset] => utf-8
+    [rm] => 1
+    [upload] => 1
+    [return] => http://localhost/wpfive/checkout/order-received/144/?key=wc_order_qQFdzexCYwBGh&utm_nooverride=1
+    [cancel_return] => http://localhost/wpfive/cart/?cancel_order=true&order=wc_order_qQFdzexCYwBGh&order_id=144&redirect&_wpnonce=bd4ef3991d
+    [page_style] => 
+    [image_url] => 
+    [paymentaction] => sale
+    [invoice] => WC-144
+    [custom] => {"order_id":144,"order_key":"wc_order_qQFdzexCYwBGh"}
+    [notify_url] => http://localhost/wpfive/wc-api/WC_Gateway_Paypal/
+    [first_name] => ***
+    [last_name] => ***
+    [address1] => ***
+    [address2] => ***
+    [city] => ***
+    [state] => ***
+    [zip] => ***
+    [country] => ***
+    [email] => ***@***
+    [night_phone_a] => ***
+    [night_phone_b] => ***
+    [no_shipping] => 1
+    [tax_cart] => 0.00
+    [item_name_1] => TestProduct
+    [quantity_1] => 1
+    [amount_1] => 90
+    [item_number_1] => 
+    [bn] => WooThemes_Cart
+)
+
