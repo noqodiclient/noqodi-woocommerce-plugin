@@ -3,7 +3,7 @@
  * Plugin Name: noqodi Payment Gateway for WooCommerce
    Plugin URI:
    Description: This plugin allows for noqodi payment gateway system
-   Author: Noqodi
+   Author: noqodi
    Author URI: https://www.noqodi.com
    Version: 0.0.1
  */
@@ -56,7 +56,7 @@ function noqodi_payment_init() {
 			'title' => array(
             			'title' => _( 'noqodi Payments Gateway'),
             			'type' =>'text',
-            			'default' => _('noqodi Payments Gateway'),
+            			'default' => _('noqodi'),
             			'desc_tip' =>true,
             			'description' => _('Add a new title for the noqodi Payments Gateway that customer will see when they are in the checkout page'),
             ),
@@ -80,7 +80,7 @@ function noqodi_payment_init() {
           					'css'           => 'width:100%',
           					'description'   => __( 'noqodi URL'),
           					'placeholder'   => __( 'noqodi URL'),
-          					'default'       => __( 'https://pay-dev02.noqodi.com/noqodi-payment'),
+          					'default'       => __( 'https://pay-dem01.noqodi.com/noqodi-payment'),
           					'desc_tip'      => true
           ),
           'noqodi_api_host' => array(
@@ -89,7 +89,7 @@ function noqodi_payment_init() {
                     		'css'           => 'width:100%',
                     		'description'   => __( 'noqodi URL'),
                     		'placeholder'   => __( 'noqodi URL'),
-                    		'default'       => __( 'https://paymentapi-dev02.noqodi.com/payment-api/v2/payments'),
+                    		'default'       => __( 'https://paymentapi-dem01.noqodi.com/payment-api/v2/payments'),
                     		'desc_tip'      => true
            ),
         'client_id' => array(
@@ -392,7 +392,7 @@ function noqodi_payment_init() {
 
                  if($noqodi_capture_response_status=='SUCCESS'){
                  $order->set_status( apply_filters( 'woocommerce_payment_complete_order_status',  'processing', $order->get_id(), $order ) );
-                 $msg="Thank you for your payment. Your transaction has been completed, and a receipt for your purchase has been emailed to you. Log into your Noqodi account to view transaction details.";
+                 $msg="Thank you for your payment. Your transaction has been completed, and a receipt for your purchase has been emailed to you.";
                  }
                  else
                  {
